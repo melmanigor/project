@@ -6,6 +6,7 @@ from src.dal.db_config import host,dbname,user,password
 from src.dal.update_row_by_id import Update_table
 from src.dal.insert_new_record import Insert_new_record
 from src.user_repository import User_repository
+from src.dto.like_dto import LikeDTO
 db=Vacation_db_connect(host=host, dbname=dbname, user=user, password=password)
 db.connect()
 # show=Show_table(db)
@@ -21,4 +22,7 @@ db.connect()
 user=User_repository(db)
 #user.ad_user("Izhak","Sade","izhaksade@gmail.com","54321",2)
 #user.get_user_by_email_password("moshecohen@gmail.com",12345)
-user.check_email_existences("moshecohen@gmail.com")
+#user.check_email_existences("moshecohen@gmail.com")
+like=LikeDTO(9,5)
+user.add_like(like)
+#user.remove_like(like)
