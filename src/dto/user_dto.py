@@ -8,5 +8,5 @@ class UserDTO:
     first_name:str
     last_name:str
     email:str
-    role_id:Role
     password:str
+    role_id:Role

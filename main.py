@@ -7,6 +7,11 @@ from src.dal.update_row_by_id import Update_table
 from src.dal.insert_new_record import Insert_new_record
 from src.user_repository import User_repository
 from src.dto.like_dto import LikeDTO
+from src.buisnes_logic.user_facade import UserFacade
+from src.dto.role_enum import Role
+from src.buisnes_logic.vacation_facade import VacationFacade
+
+from datetime import date
 db=Vacation_db_connect(host=host, dbname=dbname, user=user, password=password)
 db.connect()
 # show=Show_table(db)
@@ -23,6 +28,17 @@ user=User_repository(db)
 #user.ad_user("Izhak","Sade","izhaksade@gmail.com","54321",2)
 #user.get_user_by_email_password("moshecohen@gmail.com",12345)
 #user.check_email_existences("moshecohen@gmail.com")
-like=LikeDTO(9,5)
-user.add_like(like)
+#like=LikeDTO(2,5)
+#user.add_like(like)
 #user.remove_like(like)
+# login=UserFacade(user)
+# login.login("moshecohen@gmail.com","12345")
+#add_like=UserFacade(user)
+#add_like.add_like_by_user(2,5)
+#add_like.delete_like_by_user(2,5)
+show_vacation=VacationFacade(user)
+# vacations=show_vacation.get_all_vacation()
+# for v in vacations:
+#         print(v)
+#show_vacation.ad_vacation(country_id=1,vacation_description="טיול חווייתי בפריז",start_date=date(2025, 7, 10),end_date=date(2025, 7, 20), file_img="paris_trip.jpg",price=2500)
+show_vacation.delete_vacation(14)
