@@ -31,17 +31,19 @@ class User_repository:
         
             self.db_connect.cursor.execute("SELECT id, first_name,last_name,email,password,role_id FROM users WHERE email=%s AND password=%s;",(email,password))
             row=self.db_connect.cursor.fetchone()
-            if row:
-                return UserDTO(
+            if row is None:
+                print("No user is found")
+                return None
+            return UserDTO(
 
-                    id=row[0],
+                    user_id=row[0],
                     first_name=row[1],
                     last_name=row[2],
                     email=row[3],
                     password=row[4],
                     role_id=Role(row[5])
                 )
-            return None
+            
             
         
     
@@ -110,7 +112,7 @@ class User_repository:
    
     def del_vacation_by_id(self,id):
         try:
-            self.delete_vacation.delete_row_by_id("vacation",id)
+            self.delete_vacation.delete_row_by_parameters("vacation",[("id",id)])
             
         except Exception as e:
              print("Error deleting vacation:", e)
