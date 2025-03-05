@@ -1,6 +1,6 @@
 import psycopg as pg
 
-class Vacation_db_connect:
+class Test_db_connect:
         
         def __init__(self,host,dbname,user,password):
             self.host=host
@@ -19,6 +19,3 @@ class Vacation_db_connect:
                   password=self.password
                 )
             self.cursor=self.conn.cursor()
-
-     
-        
