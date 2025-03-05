@@ -10,6 +10,16 @@ class UserFacade:
         self.user_repo=user_repo
    
     def check_email(self,email:str)->bool:
+
+        """
+        Validates whether the given email address is in a proper format.
+
+         Args:
+             email (str): The email address to be validated.
+
+        Returns:
+            bool: True if the email is valid, False otherwise.
+        """
         valid_email=r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
         return re.match(valid_email,email) is not None
     
@@ -25,7 +35,7 @@ class UserFacade:
         new_user=UserDTO(first_name,last_name,email,password,role)
         self.user_repo.ad_user(new_user)
 
-    def login(self,email,password):
+    def login(self,email:str,password:str):
         if not self.check_email(email):
             raise ValueError("Invalid email Format")
         if len(password)<4:

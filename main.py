@@ -76,6 +76,17 @@ class TestUserfacade(unittest.TestCase):
         password = "12345"
         user=self.user_facade.login(email,password)
         self.assertIsNone(user)
+    
+    def test_check_email_success(self):
+        email = "john@example.com"
+        email_check=self.user_facade.check_email(email)
+        self.assertTrue(email_check,f"Valid email passed:{email}")
+
+    def test_check_email_fail(self):
+        email = "johnexample.com"
+        email_check=self.user_facade.check_email(email)
+        self.assertFalse(email_check,f"Invalid email passed:{email}")
+ 
 
 
 if __name__ == "__main__":
