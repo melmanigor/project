@@ -56,6 +56,7 @@ class VacationFacade:
             raise ValueError("It impossible to enter vacation on the past")
         vacation_dto=VacationDTO(None,country_id,vacation_description,start_date,end_date,file_img,price)
         self.vacation_repo.add_vacation(vacation_dto)
+        return "Vacation added successfully"
 
     def delete_vacation(self,id:int):
         """
@@ -67,4 +68,6 @@ class VacationFacade:
          Returns:
             None
         """
+        
         self.vacation_repo.del_vacation_by_id(id)
+        return "Vacation DELETED"

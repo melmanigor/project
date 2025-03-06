@@ -9,4 +9,8 @@ class UserDTO:
     last_name:str
     email:str
     password:str
-    role_id:Role
+    role_id:int
+@dataclass
+class GetUserDTO:
+        email:str
+        password:str
