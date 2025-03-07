@@ -5,7 +5,7 @@ from dataclasses import dataclass
 class VacationDTO:
     id: int
     country_id: int
-    vacation_description: str
+    description: str
     start_date: str
     end_date: str
     file_img: str

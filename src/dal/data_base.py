@@ -12,6 +12,13 @@ class Vacation_db_connect:
             self.connect()
 
         def connect(self):
+            """
+                Establishes a connection to the PostgreSQL database.
+
+                Returns:
+                        - None
+
+            """
             self.conn=pg.connect(
                   host=self.host,
                   dbname=self.dbname,

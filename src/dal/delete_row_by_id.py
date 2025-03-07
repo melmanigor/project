@@ -9,9 +9,27 @@ class DELETE_row_by_id:
     def delete_row_by_id(self, table, id):
         self.delete_row_by_parameters(table, ["id", id])
 
-    def delete_row_by_parameters(self, table, params):
+    def delete_row_by_parameters(self, table:str, params:list[tuple[str,any]]):
+        """
+        Deletes a row from the specified database table based on given parameters.
+
+        Parameters:
+            - table (str): The name of the table from which the row should be deleted.
+            - params (list[tuple[str, any]]): A list of tuples where each tuple contains:
+            - The column name (str).
+            - The corresponding value to match for deletion.
+
+        Exceptions:
+            - Raises ValueError if no record is found with the given parameters.
+            - Prints an error message if any exception occurs during execution.
+
+        Returns:
+            - None
+
+        """
+
         try:
-           # Check if the record exists first
+           
             query_select = f"SELECT * FROM {table} WHERE "
             query_delete = f"DELETE FROM {table} WHERE "
             for i in range(len(params)):
