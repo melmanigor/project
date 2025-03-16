@@ -20,36 +20,7 @@ import psycopg as pg
 # db=Vacation_db_connect(host=host, dbname=dbname, user=user, password=password)
 # db.connect()
 # cursor=db.cursor
-# show=Show_table(db)
-# show.get_table("vacation")
-# show_id=Get_row_by_id(db)
-# show_id.get_row_by_id("vacation",2)
-# delete=DELETE_row_by_id(db)
-# delete.delete_row_by_id("vacation",16)
-# update=Update_table(db)
-# update.update_row_by_id("vacation","price",5000,16)
-# new_country=Insert_new_record(db)
-# new_country.add_record("vacation",["start_date","end_date"],["01-12-2025","1-12-2026"])\\
-# user=User_repository(db)
-# user.ad_user("Izhak","Sade","izhaksade@gmail.com","54321",2)
-# user.get_user_by_email_password("moshecohen@gmail.com",12345)
-# user.check_email_existences("moshecohen@gmail.com")
-# like=LikeDTO(2,5)
-# user.add_like(like)
-# user.remove_like(like)
-# login=UserFacade(user)
-# login.login("izhaksade@gmail.com","54321")
-# add_like=UserFacade(user)
-# add_like.add_like_by_user(2,5)
-# add_like.delete_like_by_user(2,5)
-# show_vacation=VacationFacade(user)
-# vacations=show_vacation.get_all_vacation()
-# for vacation in vacations:
-#             print(f"ID: {vacation.id}, Country ID: {vacation.country_id}, Description: {vacation.description}, "
-#                   f"Start Date: {vacation.start_date}, End Date: {vacation.end_date}, Image: {vacation.file_img}, Price: {vacation.price}")
-# show_vacation.ad_vacation(country_id=1,vacation_description="טיול חווייתי בפריז",start_date=date(2025, 7, 10),end_date=date(2025, 7, 20), file_img="paris_trip.jpg",price=2500)
-# show_vacation.delete_vacation(15)
-# cursor.close()
+
 # db.conn.close()
 
 
