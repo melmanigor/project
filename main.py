@@ -190,14 +190,6 @@ class TestVacationFacade(unittest.TestCase):
         print("Test delete pass")
     
     
-
-
-    
-
-    
-    
-    
-    
-
+  
 if __name__ == "__main__":
     unittest.main()

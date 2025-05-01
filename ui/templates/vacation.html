@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vacation</title>
+</head>
+
+<body>
+    <h2>Vacations list</h2>
+    <table>
+        <thead>
+        <tr>
+            <th> Id </th>
+            <th> Country ID</th>
+            <th> Description</th>
+            <th> Start date</th>
+            <th> End date</th>
+            <th> Image</th>
+            <th> Price </th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for v in vacations%}
+        <tr>
+            <td>{{v.id}}</td>
+            <td>{{v.country_id}}</td>
+            <td>{{v.description}}</td>
+            <td>{{v.start_date}}</td>
+            <td>{{v.end_date}}</td>
+            <td> <img src="{{static_folder}}" alt="Vacation image"></td>
+            <td> {{v.price}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+</body>
+
+</html>

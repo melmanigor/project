@@ -20,5 +20,6 @@ class Show_table:
              """
              self.db_connect.cursor.execute(f"SELECT * FROM {table};")
              rows=self.db_connect.cursor.fetchall()
-             for i in rows:
-                  print(i)
+             return rows
+             #for i in rows:
+                 #print(i)
