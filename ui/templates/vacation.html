@@ -25,11 +25,11 @@
         {% for v in vacations%}
         <tr>
             <td>{{v.id}}</td>
-            <td>{{v.country_id}}</td>
+            <td>{{v.country}}</td>
             <td>{{v.description}}</td>
             <td>{{v.start_date}}</td>
             <td>{{v.end_date}}</td>
-            <td> <img src="{{static_folder}}" alt="Vacation image"></td>
+            <td> {{v.image}}</td>
             <td> {{v.price}}</td>
         </tr>
         {% endfor %}

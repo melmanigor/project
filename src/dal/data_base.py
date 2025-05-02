@@ -26,6 +26,11 @@ class Vacation_db_connect:
                   password=self.password
                 )
             self.cursor=self.conn.cursor()
+        def close(self):
+            if self.cursor:
+                self.cursor.close()
+            if self.conn:
+                 self.conn.close()
 
      
         
