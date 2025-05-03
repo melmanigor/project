@@ -12,7 +12,10 @@ from src.dal.show_table import Show_table
 from src.dal.db_config import host,dbname,user,password
 from src.dal.data_base import Vacation_db_connect
 
-app=Flask(__name__,template_folder='../ui/templates')
+app=Flask(__name__,template_folder='../ui/templates',static_folder='../ui/static')
+@app.route("/",methods=['GET','POST'])
+def index():
+    return render_template("home.html")
 @app.route("/vacations")
 def show_vacation():
     db = Vacation_db_connect(host=host, dbname=dbname, user=user, password=password)
@@ -31,3 +34,13 @@ def show_vacation():
             'image': row[5],
             'price': row[6]
         })
+    return render_template("vacation.html",vacations=vacations)
+    
+
+def open_browser():
+    webbrowser.open_new("http://127.0.0.1:5000")
+
+
+if __name__ == '__main__':
+    Timer(1, open_browser).start()
+    app.run(debug=True, use_reloader=False)
